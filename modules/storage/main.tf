@@ -1,5 +1,8 @@
-resource "aws_s3_bucket" "insecure-bucket" {
+resource "aws_s3_bucket_versioning" "insecure-bucket" {
   bucket = "insecure-bucket"
+  versioning_configuration {
+    status = "Enabled"
+  }
 }
 
 # resource "aws_s3_bucket_public_access_block" "insecure-bucket" {
