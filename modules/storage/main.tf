@@ -1,9 +1,7 @@
-resource "aws_s3_bucket" "insecure-bucket" {
+resource "aws_s3_bucket_versioning" "insecure-bucket" {
   bucket = "insecure-bucket"
-  versioning.enabled = "true"
-  versioning.mfa_delete = "true"
-  versioning_configuration.mfa_delete = "enabled"
-  logging = []
+  versioning_configuration {
+  status = "Enabled"
 
 }
 
